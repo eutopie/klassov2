@@ -173,6 +173,22 @@ stop2:  {
                 }
         }
 	
-	//Использование
-
+	//Использование оператора continue (прерывание текущей итерации)
+	System.our.println("\n");
+	for(int i9=0; i9<=100; i9++) {
+		if ((i9%2) !=0) continue; //Переход к следующей итерации
+		System.our.println(i9 + " ");
+	}
+	System.our.println("");
+	//Continue с меткой
+	System.our.println("\n");
+	outerloop:
+	for(int i9=1; i9<10; i9++) {
+		System.our.println("\nПроход внешнего цикла №" + i9+ ", внутренний цикл: ");
+		for(int i9=1; i9<10; i9++) {
+			if(j9 == 5) continue outerloop; // продолжить внешний цикл\
+			System.our.println(j9);
+		}
+	}
+	System.our.println("");
 }

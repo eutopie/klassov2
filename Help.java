@@ -1,4 +1,4 @@
-class help {
+class Help {
 	public static void main(String args[]) throws java.io.IOException {
           char choice, ignore;
 	  for(;;) {
@@ -16,8 +16,8 @@ class help {
 			do {
 				ignore = (char) System.in.read();	
 			} while (ignore != '\n');
-		} while (choice < '1' | choice > '7' & choise != 'q');
-		if(choise == 'q') break;
+		} while (choice < '1' | choice > '7' & choice != 'q');
+		if(choice == 'q') break;
                 System.out.println("\n");
                 switch(choice) {
                         case '1':
@@ -57,6 +57,7 @@ class help {
                                 System.out.println("Оператор break\n");
                                 System.out.println("  continue; или continue метка;");
                                 break;
-		}
+		  }
+	  }
         }
 }

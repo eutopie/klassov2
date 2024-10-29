@@ -1,6 +1,6 @@
 class Queue {
-  char[] q;
-  int putloc, getloc; //Указатели на элементы очереди
+  private char[] q;
+  private int putloc, getloc; //Указатели на элементы очереди
   
   Queue (int size) {
     q = new char[size];

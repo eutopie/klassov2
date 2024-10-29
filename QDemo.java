@@ -40,6 +40,8 @@ class QDemo {
       bigQ.put((char)('A' + i));
 
     //Извлекаем элементы из очереди bigQ
+    //
+    //gogog
     System.out.print("Содержимое bigQ: ");
     for(i = 0; i < 26; i++) {
       ch = bigQ.get();

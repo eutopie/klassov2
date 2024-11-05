@@ -48,7 +48,7 @@ class CallByValue {
 	}
 }
 //Класс для вызова метода с передачей праметров по ссылке
-class CallByaRef {
+class CallByRef {
         int a12, b12;
 	CallByRef (int i12, int j12){
 		a12 =i12;
@@ -99,26 +99,59 @@ class Overload {
 		System.out.println("Без параметров");
 	}
 	void ovlDemo(int a15) {
-		System.out.println("Один параметр типа int: " + a15");
+		System.out.println("Один параметр типа int: " + a15);
 	}
 	int ovlDemo(int a15, int b15) {
 		System.out.println("Два параметра типа int: " + a15 + " " + b15);
 		return a15+b15;
 	}
-        int ovlDemo(double a15, double b15) {
+        int ovlDemo(double a15, double b15) {
                 System.out.println("Два параметра типа double: " + a15 + " " + b15);
                 return a15+b15;
 	}
 }
 //Влияние автопреобразование типов на перегрузку методов
 class Overload2 {
-	void f(int x {)
-		System.out.println("Внутри f(int) : " + x)
+	void f(int x ) {
+		System.out.println("Внутри f(int) : " + x);
 	}
 	void f(double x) {
 		System.out.println("Внутри f(double) : " + x);
 	}
 }
+class Overload3 {
+        int x;
+
+	Overload3 () {
+		System.out.println("Внутри Overload3()");
+		x=0;
+	}
+	Overload3 (int i19) {
+                System.out.println("Внутри Overload3(int)");
+                x=i19;
+	}
+	Overload3 (double d19) {
+                System.out.println("Внутри Overload3(double)");
+                x=(int) d19;
+	}
+	Overload3 (int i19, int j19) {
+                System.out.println("Внутри Overload3(int, int)");
+                x=i19*j19;
+	}
+}
+class Summation {
+	int sum;
+
+	Summation(int num) {
+		sum = 0;
+		for (int i20=1; i20 <=num; i20++)
+			sum += i20;
+	}
+	Summation (Summation ob) {
+		sum = ob.sum;
+	}
+}
+
 class pr007 {
         public static void main(String[] args) {
 		Mod ob = new Mod();
@@ -172,7 +205,7 @@ class pr007 {
                 System.out.println("Результат вызова resI = ob7.ovlDemo(5.1, 3.5): "+ resD);
 		System.out.println();
 		
-		//Перегрузка с автопреобразованием типов
+		//Перегрузка с автопреобразованием
 		int i18=10;
 		double d18 = 10.1;
 		byte b18 = 99;
@@ -184,6 +217,23 @@ class pr007 {
 		ob.f(s18);
 		ob.f(f18);
 		
+		//Перегрузка конструкторов у класса Overload3
+		Overload3 t1 = new Overload3();
+		Overload3 t2 = new Overload3(88);
+		Overload3 t3 = new Overload3(17.23);
+		Overload3 t4 = new Overload3(2, 4);
+		
+		System.out.println("t1.x: " + t1.x);
+		System.out.println("t2.x: " + t2.x);
+		System.out.println("t3.x: " + t3.x);
+		System.out.println("t4.x: " + t4.x);
+		
+		//Демонстрация перегрузки конструктора для создания объекта на основе другого объекта
+		Summation s1 = new Summation (5);
+		Summation s2 = new Summation (s1);
+
+		System.out.println("s1.sum: " + s1.sum);
+                System.out.println("s2.sum: " + s2.sum);
 	}
 }
 

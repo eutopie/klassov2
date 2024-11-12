@@ -25,6 +25,26 @@ class StaticDemo {
 		return x+y;
 	}
 }
+ShowBt {
+	int numbits;
+	ShowBt (int n) {
+		numbits=n;
+	}
+	void show (long val) {
+		long mask = 1;
+//сдвиг влево значения 1
+	}
+}
+class VarArgs {
+	static void vaTest(int ... v) {
+		System.out.println("Кол-во аргументов " + v.length);
+		System.out.println("Содержимое массива аргументов ");
+		for (int i=0; i<v.length; i++)
+			System.out.println(" аргумент " + i + ": " + v[i]);
+		System.out.println();
+	}
+}
+
 class pr008 {
 	public static void main (String[] args) {
 
@@ -64,4 +84,6 @@ class pr008 {
 		System.out.println("ob1.sum(): " + ob1.sum());
                 System.out.println("ob2.sum(): " + ob2.sum());
 	}
+		System.out.println();
+
 }

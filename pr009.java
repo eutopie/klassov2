@@ -24,7 +24,8 @@ class X {
 	void show() {
 
 		System.out.println("Значение a: " + a);
-
+	}
+	void show(String msg) {
 	}
 }
 class Y {
@@ -41,8 +42,13 @@ class Z extends X {
 		b = i;
 	
 	}
-	void show() {        
+/*	void show() {
+		super.show(); //Вызов одноименного метода из суперкласса	
                 System.out.println("Значение a и b: " + a + " " + b);
+	}
+*/	
+	void show (String msg) {
+		System.out.println(msg + b);
 	}
 }
 
@@ -64,8 +70,10 @@ class ColorTriangle extends Triangle {
                 return color;
 
         }
-
-        void colorShow
+        double area() {
+		System.out.println("Метод area() должен быть переопределен в подклассе");
+		return 0.0;
+	}
 
 class Triangle extends TwoDShape {
 	String style;
@@ -119,10 +127,12 @@ class pr009 {
 		x.show(); //Демонстрация динамической диспетчеризации методов
 		System.out.println("Выполнение show() приссылке на объект подкласса");
 		x2.show();
+		x2.show("Перешруженная версия метода из подкласса");
+		z.show("Строка");
 		x2 = x;
 		System.out.println("Выполнение show() приссылке на объект суперкласса");
 		x2.show();
-
+		
 		System.out.println();
 
 		System.out.println("x2.a: " + x2.a);

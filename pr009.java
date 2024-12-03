@@ -70,9 +70,13 @@ class ColorTriangle extends Triangle {
                 return color;
 
         }
-        double area() {
+        abstract double area() {
 		System.out.println("Метод area() должен быть переопределен в подклассе");
 		return 0.0;
+	}
+	
+	String getName() {
+		return name;
 	}
 
 class Triangle extends TwoDShape {
@@ -90,6 +94,41 @@ class Triangle extends TwoDShape {
 		super(ob); //Передаем объект Triangle конструктору суперкласса
 		style = ob.style;
 }
+
+class A {
+	final void meth () {
+		System.out.println("Финальная версия meth");
+	}
+}
+
+class B extends A {
+	/*void meth() {
+		System.out.println("");
+	}
+*/
+}
+
+//Использование final для определения констант
+class ErrorMsg {
+	//коды ошибок
+	static final int OUTERR = 0;
+	static final int INERR = 1;
+	static final int DISKERR = 2;
+	static final int INDEXERR = 3;
+	String[] msgs = {
+		"Ошибка вывода",
+		"Ошибка ввода",
+		"Диск переполнен",
+		"Индекс вышел за границы массива"
+	};
+	//Возврат сообщения об ошибке
+	static String getErrorMsg(int i) {
+		if(i >= 0 & i< msgs.lenght)
+			return msgs[i];
+		else
+			return "Несуществующий код ошибки";
+}
+	
 
 class pr009 {
 	public static void main(String[] args) {
@@ -154,5 +193,24 @@ class pr009 {
 			System.out.println("Имя объекта " + shapes[i].getName());
 			System.out.println("Площадь " + shapes[i].area());
 			System.out.println();		
+	
+		}
+		Object obj;
+		obj=shapes[3];
+		System.out.println("Класс объекта " + obj.getClass() + "\nОписание: "  + obj.toString());
+		System.out.println("obj и shapes[3] равны друг другу "+ shapes[3].equals(obj));
+		ColorTriangle t10 = new ColorTriangle("Строка 1", "Строка 2", 10, 10);
+		obj=t10;
+		System.out.println("Класс объекта " + obj.getClass() + "\nОписание: "  + obj.toString());
+		System.out.println("obj и shapes[3] равны друг другу "+ shapes[3].equals(obj));
+		System.out.println("Хэш-код объекта " + t11.hashCode());
+		Triangle t11 = new Triangle (t11);
+		System.out.println("obj и t11 равны друг другу "+ t11.equals(obj));
+		System.out.println("Хэш-код объекта t11 " + t11.hashCode());
+		System.out.println("Хэш-код объекта t12 " + t12.hashCode());
+
+
 	}
+
 }
+

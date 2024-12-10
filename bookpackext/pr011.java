@@ -3,20 +3,6 @@ import bookpack.Book
 /*
  * Импорт всех классов из пакета bookpack
  * import bookpack.*;
- * kgskkjgowek[roqel[okfkmslvl,c
- * dfgdg
- * s
- * gd
- * sgdsg
- * sd
- * g
- * sd
- * fdfsfds
- * fsdfsfgrwe
- * r
- * fsdfgser
- * ewfd
- * s
  */
 package bookpackext;
 class pr011 {

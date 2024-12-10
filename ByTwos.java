@@ -1,7 +1,7 @@
 class ByTwos implements Series {
 	int start;
 	int val;
-
+//Начало
 	ByTwos() {
 		start = 0;
 		val = 0;

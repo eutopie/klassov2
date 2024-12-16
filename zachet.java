@@ -21,10 +21,14 @@ class Mark2 extends Toyota {
 
 class Itog {
        public static void main(String[] args) {
+		Toyota auto = new Toyota();
 		Toyota Vitz = new Vitz();
 	 	Toyota Mark2 = new Mark2();
+		
+		auto = Vitz;
+		auto.Kuzov();
 
-		Vitz.Kuzov();
-		Mark2.Kuzov();
+		auto = Mark2;
+		auto.Kuzov();
 	}
 }	       	
